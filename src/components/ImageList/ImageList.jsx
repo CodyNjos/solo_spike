@@ -11,14 +11,11 @@ function ImageList() {
     
     return(
         <>
-       
         <UploadForm/>
-        <input placeholder='name'/>
-        <input placeholder='Image'/>
         {images.map(images => {
             return(
                <div key = {images.id}>
-                   <p>{images.title}</p>
+                   <p>{images.name}</p>
                    <img src = {images.img_url}/>
                </div>
             )

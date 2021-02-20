@@ -16,7 +16,7 @@ import axios from 'axios';
 function* rootSaga() { // receves the dispatches from componants and desedes which saga to run
     yield takeEvery('FETCH_IMAGES', fetchImages);
     yield takeEvery('ADD_IMAGES', addImages)
-  
+
 }
 
 function* addImages(action) {
@@ -38,7 +38,7 @@ function* fetchImages() {
     } catch {
         console.log('get all error');
     }
-        
+
 }
 
 
@@ -72,7 +72,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={storeInstance}>
-        <App />
+            <App />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')
