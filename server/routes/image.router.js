@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
+console.log(process.env.REACT_APP_FILESTACK_API_KEY)
 
 router.get('/', (req, res) => {
 
@@ -15,6 +16,7 @@ router.get('/', (req, res) => {
     })
 
 });
+
 
 
 router.post('/', (req, res) => {

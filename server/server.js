@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const imageRouter = require('./routes/image.router.js')
-
+require('dotenv').config();
 const port = process.env.PORT || 5000;
 
 /** ---------- MIDDLEWARE ---------- **/
