@@ -21,6 +21,7 @@ function* rootSaga() { // receves the dispatches from componants and desedes whi
 
 function* addImages(action) {
     try {
+        console.log(action.payload)
         const post = yield axios.post('/images', action.payload);
         yield put({ type: 'FETCH_IMAGES' });
 

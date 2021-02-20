@@ -9,14 +9,23 @@ function UploadForm() {
         maxSize: 1024 * 1024,
         maxFiles: 1,
      }
-     const [img_url, setfileUrl] = useState('')
-     const [name, setName] = useState('')
-     const img = {name, img_url}
+      const [img_url, setfileUrl] = useState('')
+      const [name, setName] = useState('')
+    //  const [img, setImg] =useState({
+    //      name:'',
+    //      img_url:''
+    //  })
     const onSuccess = (result) => {
         console.log('Result from filestack success: ', result);
-        setfileUrl( result.filesUploaded[0].url )
-        setName( result.filesUploaded[0].filename)
-        dispatch({type:'ADD_IMAGES' , payload:img})
+        // setfileUrl(result.filesUploaded[0].url )
+        // setName(result.filesUploaded[0].filename)
+        const img = { name: result.filesUploaded[0].filename, img_url: result.filesUploaded[0].url }
+         dispatch({type:'ADD_IMAGES' , payload:img })
+        testImg()
+        }
+        const testImg = () =>{
+            console.log(name)
+            console.log(img_url)
         }
     // const onError = (error) => {
     //     this.props.dispatch({ type: 'UPLOAD_ALERT', payload: { message: 'Error uploading file', alert: 'alert-error' } });

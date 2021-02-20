@@ -21,9 +21,10 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const img = req.body
+    console.log(img)
     const queryText = `INSERT INTO "images" ("name", "img_url")
     VALUES ($1, $2)`
-    pool.query(queryText, [img.name, img.image_url])
+    pool.query(queryText, [img.name, img.img_url])
         .then(result => {
             console.log(result)
             res.sendStatus(500)
