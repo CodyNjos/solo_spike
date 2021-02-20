@@ -15,9 +15,19 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() { // receves the dispatches from componants and desedes which saga to run
     yield takeEvery('FETCH_IMAGES', fetchImages);
+    yield takeEvery('ADD_IMAGES', addImages)
   
 }
 
+function* addImages(action) {
+    try {
+        const post = yield axios.post('/images', action.payload);
+        yield put({ type: 'FETCH_IMAGES' });
+
+    } catch {
+        console.log('get all error');
+    }
+}
 
 function* fetchImages() {
     try {
