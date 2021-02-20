@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch,  useSelector} from "react-redux"
 import UploadForm from '../UploadForm/UploadForm'
+import './ImageList.css'
 
 function ImageList() {
     const images = useSelector(store => store.images)
@@ -11,11 +12,11 @@ function ImageList() {
     
     return(
         <>
-        <UploadForm/>
+        <UploadForm/><br/>
         {images.map(images => {
             return(
-               <div key = {images.id}>
-                   <p>{images.name}</p>
+               <div className="imgs" key = {images.id}>
+                  
                    <img src = {images.img_url}/>
                </div>
             )

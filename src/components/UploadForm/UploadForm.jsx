@@ -1,10 +1,14 @@
 import ReactFilestack from 'filestack-react';
 import { useDispatch } from 'react-redux';
+import {useState} from 'react'
 function UploadForm() {
+    const[ img, setImg] = useState({
+        name: '',
+        img_url: ''
+    })
     const dispatch = useDispatch();
     const basicOptions = {
         accept: ['image/*'],
-        fromSources: ['local_file_system'],
         maxSize: 1024 * 1024,
         maxFiles: 1,
     }
@@ -20,14 +24,18 @@ function UploadForm() {
     }
 
     return (
+        <div className='fileStack'>
         <ReactFilestack
             apikey={process.env.REACT_APP_FILESTACK_API_KEY}
             buttonText="Upload Image"
-            buttonClass="ui medium button gray"
             options={basicOptions}
             onSuccess={onSuccess}
             onError={onError}
-
-        />)
+        />
+        </div>
+      
+        
+         )
+       
 }
 export default UploadForm
