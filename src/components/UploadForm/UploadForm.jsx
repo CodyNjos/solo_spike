@@ -1,11 +1,7 @@
 import ReactFilestack from 'filestack-react';
 import { useDispatch } from 'react-redux';
-import {useState} from 'react'
 function UploadForm() {
-    const[ img, setImg] = useState({
-        name: '',
-        img_url: ''
-    })
+    
     const dispatch = useDispatch();
     const basicOptions = {
         accept: ['image/*'],

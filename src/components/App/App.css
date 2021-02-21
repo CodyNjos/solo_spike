@@ -14,11 +14,13 @@ img{
   position: relative;
   text-align: center;
   border: 2px outset grey;
+  background-color: rgb(100, 100, 245);
+  color: white;
   border-radius: 5px;
   padding:6px;
   font-size: 30px;
 }
 .fileStack button:active{
   color: red;
-  border: 2px inset grey;
+  border-style: inset;
 }

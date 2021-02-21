@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
     pool.query(queryText, [img.name, img.img_url])
         .then(result => {
             console.log(result)
-            res.sendStatus(500)
+            res.sendStatus(201)
         })
 })
 module.exports = router;
